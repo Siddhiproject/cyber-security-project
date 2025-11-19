@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation Complete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .box {
+            max-width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background: #0033a0;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #00246a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <img src="SBI logo.png" width="120" style="margin-bottom: 10px;">
+
+    <h3>Simulation Completed</h3>
+
+    <p>
+        This was only a simulation.  
+        No real banking information was collected or stored.
+    </p>
+
+    <button onclick="goBack()">Return</button>
+</div>
+
+<script>
+function goBack() {
+    window.location.href = "Bank Alert.html";
+}
+</script>
+
+</body>
+</html>

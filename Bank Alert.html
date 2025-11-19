@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            width: 80px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #0033a0;
+        }
+
+        .alert-box {
+            background: #e6f0ff;
+            padding: 15px;
+            border-left: 5px solid #0033a0;
+            margin-bottom: 20px;
+        }
+
+        .amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d10000;
+        }
+
+        .details {
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .debit{
+            font-size: 13px;
+        }
+        
+       
+        
+    
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <img src=" SBI logo.png" class="logo" alt="Bank Logo">
+
+    <h2>Safe Bank of India</h2>
+
+    <div class="alert-box">
+        <div class="amount">- ₹5,000 <br></div>
+        <div class="debit"> Debited from <br></div>
+       
+        <div style="display: flex; align-items: center; gap: 10px;">
+    <img src=" SBI logo02.png" class="bank-logo" style="width: 40px; height: 40px;">
+    <p style="margin: 0; font-size: 16px; font-weight: bold;">
+        A/C XXXXXXXXXX
+    </p>
+</div>
+        <div class="details">
+            Transaction ID: SBI45890213 <br>
+           
+            Status: Processing
+        </div>
+    </div>
+
+    <p style="font-size: 13px; text-align: center;">
+   <br>
+    <a href="login page.html" style="color:#1d368f;text-decoration: none; font-weight:bold; cursor: pointer;">
+     <p style="text-align: start;font-size: 7px;"></p>  Contact customer support ?
+    </a>
+</p>
+
+</div>
+<!-- REPORT EMAIL BUTTON -->
+<button onclick="reportEmail()">Report This Email</button>
+
+<!-- VERIFY NOW → goes to Login Page -->
+<button onclick="goToLogin()">Verify Now</button>
+
+<script>
+function reportEmail() {
+    let reports = localStorage.getItem("reports");
+    reports = reports ? parseInt(reports) + 1 : 1;
+    localStorage.setItem("reports", reports);
+
+    alert("Thank you! Report submitted.");
+}
+
+function goToLogin() {
+    let clicks = localStorage.getItem("verifyClicks");
+    clicks = clicks ? parseInt(clicks) + 1 : 1;
+    localStorage.setItem("verifyClicks", clicks);
+
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
