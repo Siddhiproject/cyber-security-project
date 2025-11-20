@@ -78,6 +78,24 @@
         button:hover {
             background: #002370;
         }
+
+        /* Report link text */
+        .report-link {
+            font-size: 13px; 
+            margin-top: 20px; 
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .report-btn {
+            background: transparent;
+            border: none;
+            color: #0033a0;
+            text-decoration: underline;
+            font-size: 13px;
+            cursor: pointer;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -107,6 +125,21 @@
             Contact customer support?
         </a>
     </p>
+
+    <!-- Report Email Link -->
+    <div class="report-link">
+        <button class="report-btn" onclick="reportEmail()">Report this email</button>
+    </div>
 </div>
 
-<button onclick="reportEmail(
+<script>
+function reportEmail() {
+    alert("Thank you! Report submitted.");
+}
+</script>
+
+</body>
+</html>
+
+       
+
