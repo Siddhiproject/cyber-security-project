@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Transaction Alert</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,12 +14,14 @@
         }
 
         .container {
-            width: 350px;
-            margin: 80px auto;
+            width: 95%;
+            max-width: 350px;
+            margin: 40px auto;
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            box-sizing: border-box;
         }
 
         .logo {
@@ -34,11 +37,14 @@
         }
 
         .alert-box {
-           max-width: 450px;  
-    width: 95%;         
-    margin: auto;
-    padding: 25px;     
-    border: 1px solid #ccc;
+            max-width: 450px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            background: #d9e7ff;
+            border-left: 5px solid #0033a0;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
 
         .amount {
@@ -52,74 +58,55 @@
             font-size: 14px;
             line-height: 1.5;
         }
-        .debit{
+
+        .debit {
             font-size: 13px;
         }
-        
-       
-        
-    
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            background: #0033a0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #002370;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    
-    <img src=" SBI logo.png" class="logo" alt="Bank Logo">
+    <img src="SBI logo.png" class="logo">
 
     <h2>Safe Bank of India</h2>
 
     <div class="alert-box">
-        <div class="amount">- ₹5,000 <br></div>
-        <div class="debit"> Debited from <br></div>
-       
-        <div style="display: flex; align-items: center; gap: 10px;">
-    <img src=" SBI logo02.png" class="bank-logo" style="width: 40px; height: 40px;">
-    <p style="margin: 0; font-size: 16px; font-weight: bold;">
-        A/C XXXXXXXXXX
-    </p>
-</div>
+        <div class="amount">- ₹5,000</div>
+        <div class="debit">Debited from</div>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 5px;">
+            <img src="SBI logo02.png" class="bank-logo" style="width: 40px; height: 40px;">
+            <p style="margin: 0; font-size: 16px; font-weight: bold;">A/C XXXXXXXXXX</p>
+        </div>
+
         <div class="details">
             Transaction ID: SBI45890213 <br>
-           
             Status: Processing
         </div>
     </div>
 
-    <p style="font-size: 13px; text-align: center;">
-   <br>
-    <a href="login page.html" style="color:#1d368f;text-decoration: none; font-weight:bold; cursor: pointer;">
-     <p style="text-align: start;font-size: 7px;"></p>  Contact customer support ?
-    </a>
-</p>
-
+    <p style="font-size: 13px; text-align: center; margin-top: 15px;">
+        <a href="login page.html" style="color:#1d368f;text-decoration: none; font-weight:bold;">
+            Contact customer support?
+        </a>
+    </p>
 </div>
-<!-- REPORT EMAIL BUTTON -->
-<button onclick="reportEmail()">Report This Email</button>
 
-<!-- VERIFY NOW → goes to Login Page -->
-<button onclick="goToLogin()">Verify Now</button>
-
-<script>
-function reportEmail() {
-    let reports = localStorage.getItem("reports");
-    reports = reports ? parseInt(reports) + 1 : 1;
-    localStorage.setItem("reports", reports);
-
-    alert("Thank you! Report submitted.");
-}
-
-function goToLogin() {
-    let clicks = localStorage.getItem("verifyClicks");
-    clicks = clicks ? parseInt(clicks) + 1 : 1;
-    localStorage.setItem("verifyClicks", clicks);
-
-    window.location.href = "login.html";
-}
-</script>
-
-</body>
-
-</html>
-
-
+<button onclick="reportEmail(
